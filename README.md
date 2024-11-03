@@ -4,5 +4,7 @@ The goal of this project is to draw a map of the minimum altitude over the groun
 The main script takes a DEM map and a minimum elevation angle, calculates the minimum flying altitudes and plots them in a map. The plot script takes the minimum flying altitudes and plots them directly.
 
 ## Example
-An example of the Mont Perdut mountain (Pyrenees) is provided, using a DEM map from Copernicus. 
+An example of the Mont Perdut mountain (Pyrenees) is provided, using a DEM map from Copernicus. The next figure shows the resulting 3D map:
+![Mont Perdut coverage map](images/mont_perdut_map.png) 
+
 - **Source**: European Space Agency (2024). *Copernicus Global Digital Elevation Model*. Distributed by OpenTopography. [https://doi.org/10.5069/G9028PQB](https://doi.org/10.5069/G9028PQB). Accessed: 2024-11-03.
