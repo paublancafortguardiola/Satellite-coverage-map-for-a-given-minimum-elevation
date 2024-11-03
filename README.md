@@ -5,6 +5,7 @@ The main script takes a DEM map and a minimum elevation angle, calculates the mi
 
 ## Example
 An example of the Mont Perdut mountain (Pyrenees) is provided, using a DEM map from Copernicus. The next figure shows the resulting 3D map:
-![Mont Perdut coverage map](images/mont_perdut_map.png) 
+
+![Mont Perdut coverage map](images/mont_perdut.png) 
 
 - **Source**: European Space Agency (2024). *Copernicus Global Digital Elevation Model*. Distributed by OpenTopography. [https://doi.org/10.5069/G9028PQB](https://doi.org/10.5069/G9028PQB). Accessed: 2024-11-03.
