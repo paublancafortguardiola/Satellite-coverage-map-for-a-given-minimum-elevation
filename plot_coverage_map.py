@@ -15,7 +15,7 @@ dem_array = dem.read(1).astype('float64') # array with the terrain altitude
 dem_array = dem_array[::-1,:] # we invert the elements on the first dimension to have the plot pointing to the north
 
 
-spacing = 30.9 # spacing between points: 30.9m and 30.9m per latituds < 50º
+spacing = 30.9 # spacing between points: 30.9m and 30.9m for latitude < 50º
 
 plt.subplot(2, 1, 1)
 # Create a grid of values
@@ -35,7 +35,6 @@ plt.colorbar()
 plt.show()
 
 # Create a color matrix based on the altitud matrix
-# Normalize the color matrix to range [0, 1] for colormap
 altures_normalized = (altures - np.min(altures)) / (np.max(altures) - np.min(altures))
 
 # Prepare the 3D plot
@@ -47,18 +46,18 @@ cmap = plt.cm.viridis_r
 # Plot the surface with colors based on the altitud matrix
 surf = ax.plot_surface(X, Y, dem_array, facecolors=cmap(altures_normalized), rstride=1, cstride=1, linewidth=0, antialiased=False)
 
-# Create a colorbar based on the normalized altitud values
+# Create a colorbar
 norm = plt.Normalize(vmin=np.min(altures), vmax=np.max(altures))
 mappable = plt.cm.ScalarMappable(cmap=cmap, norm=norm)
-mappable.set_array([])  # Needed for older Matplotlib versions
+mappable.set_array([])
 cbar = fig.colorbar(mappable, ax=ax, shrink=0.5, aspect=10)
-cbar.set_label('Altitude Color Scale')  # Set the label for the colorbar
+cbar.set_label('Altitude Color Scale') 
 
 # Set labels and title
 ax.set_xlabel('X (meters)')
 ax.set_ylabel('Y (meters)')
 ax.set_zlabel('Altitude (meters)')
-ax.set_zlim(np.max(dem_array),spacing*dem_array.shape[1])
+ax.set_zlim(np.min(dem_array),spacing*min(dem_array.shape))
 ax.set_title('3D Surface with the altitude over sea level colored by minimum flying altitude')
 
 # Show the plot
